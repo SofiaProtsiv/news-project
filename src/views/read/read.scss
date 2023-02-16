@@ -1,0 +1,56 @@
+@import '../../style/utils/mixins.scss';
+
+.read__section {
+  padding: 4rem 0;
+}
+.read__container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.accordionMenu__container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.accordionMenu__item {
+}
+.accordionMenu__item-date {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--text-color);
+  padding-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--text-color-light);
+
+  cursor: url(../../images/cursor_pointer.svg), pointer;
+}
+.accordionMenu__item-arrow {
+  margin-left: 0.5rem;
+  fill: var(--text-color);
+  &.active {
+    transform: rotate(180deg);
+  }
+}
+.accordionMenu {
+  display: none;
+  &.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+    padding: 2rem 0;
+    @include onTablet {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    @include onLaptop {
+      gap: 2rem;
+    }
+  }
+}

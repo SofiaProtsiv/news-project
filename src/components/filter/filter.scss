@@ -1,0 +1,113 @@
+@import '../../style/utils/mixins.scss';
+
+.section__filter {
+  position: relative;
+  padding: 2rem 0 0 0;
+}
+.filter__container {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  justify-content: space-between;
+}
+.filter__buttons-container {
+  display: flex;
+  gap: 0.75rem;
+
+  @include onLaptop {
+    gap: 1rem;
+  }
+  &.hidden {
+    display: none;
+  }
+}
+.filter__button {
+  height: fit-content;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #111321;
+  background-color: var(--white-color);
+  border-radius: 20px;
+  border: 1px solid var(--accent-color);
+  padding: 0.5rem 1.25rem;
+  transition: 400ms ease;
+  &.active,
+  &:hover {
+    color: var(--white-color);
+    background-color: var(--accent-color);
+  }
+}
+.filter__select-text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #111321;
+  background-color: var(--white-color);
+  border-radius: 20px;
+  border: 1px solid var(--accent-color);
+  padding: 0.5rem 1.25rem;
+  cursor: url(../../images/cursor_pointer.svg), pointer;
+  &.active {
+    color: var(--white-color);
+    background-color: var(--accent-color);
+
+    & > .filter__select-arrow {
+      fill: var(--white-color);
+    }
+  }
+}
+.filter__select-arrow {
+  fill: var(--accent-color);
+}
+.filter__select {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  padding-bottom: 0;
+  background-color: var(--white-color);
+  width: 168px;
+  max-height: 380px;
+  border-radius: 1.25rem;
+  overflow: scroll;
+
+  z-index: 3;
+}
+.filter__option {
+  cursor: url(../../images/cursor_pointer.svg), pointer;
+  color: var(--accent-color);
+
+  &:hover,
+  &.active {
+    color: var(--black-color);
+  }
+}
+
+.filter__calendar-container {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  // @include onLaptop {
+  // padding: 0 2rem 0 0;
+  // }
+}
+
+.filter__calendar-label {
+  display: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  color: var(--text-color);
+  @include onLaptop {
+    display: block;
+  }
+}

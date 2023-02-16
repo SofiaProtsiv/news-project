@@ -1,0 +1,22 @@
+@import '../../style/utils/mixins.scss';
+
+.section__articles {
+  padding: 4rem 0;
+}
+.section__container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.aricles__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  @include onTablet {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  @include onLaptop {
+    gap: 2rem;
+  }
+}
